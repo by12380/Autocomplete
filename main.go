@@ -1,24 +1,28 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
-	"time"
 
 	"github.com/by12380/Autocomplete/routers"
 	"github.com/by12380/Autocomplete/services/trie"
+	"github.com/caarlos0/env/v6"
 	"github.com/gin-gonic/gin"
 	"github.com/tidwall/gjson"
 )
 
+type config struct {
+	AssetsPath string `env:"ASSETS_PATH"`
+}
+
 func main() {
-	start := time.Now()
+	cfg := config{}
+	env.Parse(&cfg)
 
 	r := gin.Default()
 
 	routers.InitAutocomplete(r.Group("/autocomplete"))
 
-	bytes, err := ioutil.ReadFile("./assets/input.json")
+	bytes, err := ioutil.ReadFile(cfg.AssetsPath + "/input.json")
 
 	if err != nil {
 		println(err)
@@ -37,7 +41,4 @@ func main() {
 	}
 
 	r.Run()
-
-	duration := time.Since(start)
-	fmt.Println(duration)
 }
