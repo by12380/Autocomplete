@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: update-trie
+  namespace: default
+spec:
+  entrypoint: update-trie
+  templates:
+  - name: update-trie
+    steps:
+    - - name: update-trie
+        template: aggregator
+    - - name: restart-trie
+        template: restart-trie-script
+
+  - name: aggregator
+    container:
+      image: by12380/autocomplete-workflows-aggregator
+      env:
+        - name: MINIO_ACCESS_KEY
+          value: {{ .Values.global.minio.accessKey }}
+        - name: MINIO_SECRET_KEY
+          value: {{ .Values.global.minio.secretKey }}
+  - name: restart-trie-script
+    script:
+      image: bitnami/kubectl
+      command: [bash]
+      source: |
+        kubectl rollout restart deployment/autocomplete-chart
