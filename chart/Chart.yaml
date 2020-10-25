@@ -21,3 +21,14 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
+
+dependencies:
+- name: mongodb
+  version: "9.1.1"
+  repository: "https://charts.bitnami.com/bitnami"
+- name: minio
+  version: "3.7.6"
+  repository: "https://charts.bitnami.com/bitnami"
+- name: argo
+  version: "0.12.1"
+  repository: "https://argoproj.github.io/argo-helm"

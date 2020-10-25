@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: by12380/autocomplete
-  pullPolicy: IfNotPresent
+  pullPolicy: "Always"
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
   env:
@@ -79,3 +79,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+mongodb:
+  auth:
+    enabled: false
+
+global:
+  minio:
+    accessKey: Q3AM3UQ867SPQQA43P2F
+    secretKey: tfteSlswRu7BJ86wekitnifILbZam1KYY3TG

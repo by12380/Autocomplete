@@ -36,6 +36,10 @@ spec:
           env:
             - name: ASSETS_PATH
               value: {{ .Values.image.env.assetsPath }}
+            - name: MINIO_ACCESS_KEY
+              value: {{ .Values.global.minio.accessKey }}
+            - name: MINIO_SECRET_KEY
+              value: {{ .Values.global.minio.secretKey }}
           ports:
             - name: http
               containerPort: 8080
