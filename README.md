@@ -15,5 +15,5 @@ The data used for Autocomplete search words is based upon the frequency of past 
 ## Architecture
 
 <div align="center">
-<img src="https://github.com/by12380/Autocomplete/blob/master/docs/images/autocomplete-architecture.svg" width="600px">
+<img src="https://github.com/by12380/Autocomplete/blob/master/docs/images/autocomplete-architecture.svg" width="900px">
 </div>
