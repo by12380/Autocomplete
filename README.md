@@ -4,13 +4,13 @@ Autocomplete is a highly performant, scalable, and available service in the kube
 
 ---
 
+## Intro
+
 This repo contains additional components that will showcase a full system using Autocomplete.
 
 However, the ultimate goal of this project is to create an autocomplete service that will be portable and reusable with other kubernetes projects.
 
 The data used for Autocomplete search words is based upon the frequency of past search queries collected from the web component.
-
----
 
 ## Tech Stacks
 
