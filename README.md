@@ -1,6 +1,6 @@
 # Autocomplete
 
-Autocomplete is a highly performant, scalable, and available service in the kubenetes environment to provide an application with type-ahead search word suggestions similar to Google search.
+Autocomplete is a highly performant, scalable, and available service in the kubernetes environment to provide an application with type-ahead search word suggestions similar to Google search.
 
 ---
 
@@ -14,7 +14,7 @@ The data used for Autocomplete search words is based upon the frequency of past 
 
 ## Tech Stacks
 
-Go, Kubenetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB), [Minio](https://min.io/) (S3-compatible storage), [Argo](https://argoproj.github.io/) (Workflow manager), [Gin](https://github.com/gin-gonic/gin) (Web framework)
+Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB), [Minio](https://min.io/) (S3-compatible storage), [Argo](https://argoproj.github.io/) (Workflow manager), [Gin](https://github.com/gin-gonic/gin) (Web framework)
 
 ## Architecture
 
