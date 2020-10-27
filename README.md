@@ -1,6 +1,6 @@
 # Autocomplete
 
-Autocomplete is a highly performant, scalable, and available service in the kubenetes environment to provide an application with type-ahead search word suggestions similar to Google seearch.
+Autocomplete is a highly performant, scalable, and available service in the kubenetes environment to provide an application with type-ahead search word suggestions similar to Google search.
 
 ---
 
