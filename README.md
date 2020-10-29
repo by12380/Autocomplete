@@ -24,9 +24,25 @@ Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB),
 
 ## Q&A
 
-How did you implement the Autocomplete service?
+<details>
+  <summary>How did you implement the Autocomplete service?</summary>
 
-How do you ensure the efficiency of the Autocomplete service?
+  Trie was used as the data structure behind the Autocomplete service.
+</details>
+
+<details>
+  <summary>How do you ensure the efficiency of the Autocomplete service?</summary>
+
+  Since searching for all words matching a prefix in a trie has a time complexity of O(n), n being the number of nodes in the trie, the performace will suffer as the size of the trie grows.
+  
+  To ensure the efficiency of search, we modified the trie to store top K results at each node for its corresponding prefix.
+  
+  This will increase the space complexity to O(nk), where k is the number of top results we store.
+  
+  This will reduce the time complexity for searching words for a given prefix to O(1), and total time complexity for search operation would be reduced to O(l), where l is the length of the prefix (input keyword).
+  
+  A sacrifice of increased space for better time complexiity is a worth it tradeoff.
+</details>
 
 How do you ensure the service is scalable to handle high throughput?
 
