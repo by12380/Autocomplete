@@ -108,3 +108,7 @@ What is Minio?
 Why did you not use exisitng cloud services such as AWS S3 and Mongo Atlas?
 
 ## Next Steps
+
+- Geographical-based search word suggestions
+- Client-server connection with web-socket
+- Multilingual support (UTF-8 chars)
