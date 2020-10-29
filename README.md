@@ -26,13 +26,20 @@ Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB),
 
 <details>
   <summary>How did you implement the Autocomplete service?</summary>
+  
+  ### Q: How did you implement the Autocomplete service?
 
   Trie was used as the data structure behind the Autocomplete service.
+  
+  ---
 </details>
 
 <details>
   <summary>How do you ensure the efficiency of the Autocomplete service?</summary>
 
+  ### Q: How do you ensure the efficiency of the Autocomplete service?
+  
+  #### Answer:
   Since searching for all words matching a prefix in a trie has a time complexity of O(n), n being the number of nodes in the trie, the performace will suffer as the size of the trie grows.
   
   To ensure the efficiency of search, we modified the trie to store top K results at each node for its corresponding prefix.
@@ -42,25 +49,38 @@ Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB),
   This will reduce the time complexity for searching words for a given prefix to O(1), and total time complexity for search operation would be reduced to O(l), where l is the length of the prefix (input keyword).
   
   A sacrifice of increased space for better time complexiity is a worth it tradeoff.
+  
+  ---
+</div>
 </details>
 
 <details>
   <summary>How do you ensure the service is scalable to handle high throughput?</summary>
 
+  ### Q: How do you ensure the service is scalable to handle high throughput?
+
+  #### Answer:
   Since the Autocomplete service is read only, we can easily create replicas of the service to handle more request load.
   
   We can utilize the autoscaling feature that is supported by kubernetes natively.
+  
+  ---
 </details>
 
 
 <details>
   <summary>How do you ensure the service is scalable to handle a growing list of suggested search words?</summary>
 
+  ### Q: How do you ensure the service is scalable to handle a growing list of suggested search words?
+
+  #### Answer:
   As the size of the trie grows (growing list of suggested search words in our bank), it will eventually hit the memory limit for each pod in the service.
   
   To avoid holding all suggested search words in one app instance, we can split the search words by ranges of alphabets, ex ([A-I], [J-R], [S-Z]).
   
   Thankfully, with the help of Helm templates, we can easily and dynamically create kubernetes resource by updating the configuration files used by Helm.
+  
+  ---
 </details>
 
 How do you route search request to the correct shard of service?
