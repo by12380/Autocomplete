@@ -44,11 +44,26 @@ Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB),
   A sacrifice of increased space for better time complexiity is a worth it tradeoff.
 </details>
 
-How do you ensure the service is scalable to handle high throughput?
+<details>
+  <summary>How do you ensure the service is scalable to handle high throughput?</summary>
 
-How do you ensure the service is scalable to handle a growing list of suggested search words?
+  Since the Autocomplete service is read only, we can easily create replicas of the service to handle more request load.
+  
+  We can utilize the autoscaling feature that is supported by kubernetes natively.
+</details>
 
-How did you route search request to the correct shard of service?
+
+<details>
+  <summary>How do you ensure the service is scalable to handle a growing list of suggested search words?</summary>
+
+  As the size of the trie grows (growing list of suggested search words in our bank), it will eventually hit the memory limit for each pod in the service.
+  
+  To avoid holding all suggested search words in one app instance, we can split the search words by ranges of alphabets, ex ([A-I], [J-R], [S-Z]).
+  
+  Thankfully, with the help of Helm templates, we can easily and dynamically create kubernetes resource by updating the configuration files used by Helm.
+</details>
+
+How do you route search request to the correct shard of service?
 
 How do you ensure high availability for your service?
 
