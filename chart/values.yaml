@@ -74,6 +74,12 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+shards:
+  keys:
+    - "a-i"
+    - "j-r"
+    - "s-z"
+
 nodeSelector: {}
 
 tolerations: []
