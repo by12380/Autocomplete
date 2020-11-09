@@ -21,15 +21,15 @@ import (
 
 type config struct {
 	AssetsPath         string `env:"ASSETS_PATH"`
-	MongoDBServiceHost string `env:"AUTOCOMPLETE_MONGODB_SERVICE_HOST"`
-	MongoDBServicePort string `env:"AUTOCOMPLETE_MONGODB_SERVICE_PORT"`
+	MongoDBServiceHost string `env:"DEFAULT_MONGODB_SERVICE_HOST"`
+	MongoDBServicePort string `env:"DEFAULT_MONGODB_SERVICE_PORT"`
 }
 
 func main() {
 	cfg := config{}
 	env.Parse(&cfg)
 
-	mongoDBUrl := "mongodb://" + os.Getenv("AUTOCOMPLETE_MONGODB_SERVICE_HOST") + ":" + os.Getenv("AUTOCOMPLETE_MONGODB_SERVICE_PORT")
+	mongoDBUrl := "mongodb://" + os.Getenv("DEFAULT_MONGODB_SERVICE_HOST") + ":" + os.Getenv("DEFAULT_MONGODB_SERVICE_PORT")
 
 	log := logrus.New()
 	hook, err := mgorus.NewHooker(mongoDBUrl, "autocomplete", "logs")
@@ -42,7 +42,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	endpoint := os.Getenv("AUTOCOMPLETE_MINIO_SERVICE_HOST") + ":" + os.Getenv("AUTOCOMPLETE_MINIO_SERVICE_PORT")
+	endpoint := os.Getenv("DEFAULT_MINIO_SERVICE_HOST") + ":" + os.Getenv("DEFAULT_MINIO_SERVICE_PORT")
 	accessKeyID := os.Getenv("MINIO_ACCESS_KEY")
 	secretAccessKey := os.Getenv("MINIO_SECRET_KEY")
 

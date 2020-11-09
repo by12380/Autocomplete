@@ -26,4 +26,4 @@ spec:
       image: bitnami/kubectl
       command: [bash]
       source: |
-        kubectl rollout restart deployment/autocomplete-chart
+        kubectl rollout restart deployment/default-autocomplete
