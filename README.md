@@ -37,7 +37,7 @@ Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB),
 
 6. Run `minikube start` to start your kubernetes environment.
 
-7. Run `helm install autocomplete ./chart` to deploy project to kubernetes.
+7. Run `helm install default ./chart` to deploy project to kubernetes.
 
 8. (Optional) Run `minikube dashboard` to open Kubernetes dashboard and check for deployment status.
 
