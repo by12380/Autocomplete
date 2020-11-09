@@ -22,6 +22,26 @@ Go, Kubernetes, [Helm](https://helm.sh/) (K8 package manager), MongoDB (Log DB),
 <img src="https://github.com/by12380/Autocomplete/blob/master/docs/images/autocomplete-architecture.svg" width="900px">
 </div>
 
+## Dev Setup
+
+1. [Install Go](https://golang.org/doc/install).
+
+2. Install minikube and kubectl.
+    - Follow the instructions in https://minikube.sigs.k8s.io/docs/start/ to install both.
+
+3. [Install Helm](https://helm.sh/docs/intro/install/).
+
+4. Clone this repository and navgiate to the project's root directory.
+
+5. Run `go get` to install go module dependencies.
+
+6. Run `minikube start` to start your kubernetes environment.
+
+7. Run `helm install autocomplete ./chart` to deploy project to kubernetes.
+
+8. (Optional) Run `minikube dashboard` to open Kubernetes dashboard by opening the url provided by the command to check deployment status.
+
+
 ## Q&A
 
 <details>
