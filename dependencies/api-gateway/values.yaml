@@ -5,12 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: by12380/autocomplete
+  repository: by12380/autocomplete-api-gateway
   pullPolicy: "Always"
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
-  env:
-    assetsPath: "./assets"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -39,8 +37,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
-  port: 5000
+  type: ClusterIP
+  port: 80
 
 ingress:
   enabled: false
@@ -74,23 +72,8 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-shards:
-  keys:
-    - "a-i"
-    - "j-r"
-    - "s-z"
-
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
-
-mongodb:
-  auth:
-    enabled: false
-
-global:
-  minio:
-    accessKey: Q3AM3UQ867SPQQA43P2F
-    secretKey: tfteSlswRu7BJ86wekitnifILbZam1KYY3TG

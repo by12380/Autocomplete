@@ -8,5 +8,8 @@ dependencies:
 - name: argo
   repository: https://argoproj.github.io/argo-helm
   version: 0.12.1
-digest: sha256:b3bce68e87c4482f43e1886ad9367f4d2b7ed198ea6dbbe4da7eafc58a1f027c
-generated: "2020-10-05T16:29:18.859315-07:00"
+- name: api-gateway
+  repository: file://../dependencies/api-gateway
+  version: 0.1.0
+digest: sha256:648427467207af3c54f963b8a65f70c7914fb68393ade8f5faabadbe1361c1ce
+generated: "2020-11-11T20:15:14.421813-08:00"
