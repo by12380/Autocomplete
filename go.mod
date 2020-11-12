@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/LyricTian/logrus-mongo-hook v0.0.0-20181228030113-79ee868c8285
 	github.com/LyricTian/queue v1.2.0 // indirect
+	github.com/by12380/Autocomplete/dependencies/api-gateway v0.0.0-20201112072538-7152ea2322dc // indirect
 	github.com/caarlos0/env/v6 v6.3.0
 	github.com/creack/pty v1.1.11 // indirect
 	github.com/fatih/color v1.9.0 // indirect
@@ -21,7 +22,7 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/pelletier/go-toml v1.8.0 // indirect
-	github.com/sirupsen/logrus v1.6.0
+	github.com/sirupsen/logrus v1.7.0
 	github.com/tidwall/gjson v1.6.0
 	github.com/tidwall/pretty v1.0.1 // indirect
 	github.com/toorop/gin-logrus v0.0.0-20200831135515-d2ee50d38dae
