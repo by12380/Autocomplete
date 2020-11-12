@@ -18,7 +18,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	endpoint := os.Getenv("AUTOCOMPLETE_MINIO_SERVICE_HOST") + ":" + os.Getenv("AUTOCOMPLETE_MINIO_SERVICE_PORT")
+	endpoint := os.Getenv("DEFAULT_MINIO_SERVICE_HOST") + ":" + os.Getenv("DEFAULT_MINIO_SERVICE_PORT")
 	accessKeyID := os.Getenv("MINIO_ACCESS_KEY")
 	secretAccessKey := os.Getenv("MINIO_SECRET_KEY")
 
@@ -46,7 +46,7 @@ func main() {
 		log.Printf("Successfully created %s\n", bucketName)
 	}
 
-	mongoDBUrl := "mongodb://" + os.Getenv("AUTOCOMPLETE_MONGODB_SERVICE_HOST") + ":" + os.Getenv("AUTOCOMPLETE_MONGODB_SERVICE_PORT")
+	mongoDBUrl := "mongodb://" + os.Getenv("DEFAULT_MONGODB_SERVICE_HOST") + ":" + os.Getenv("DEFAULT_MONGODB_SERVICE_PORT")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
