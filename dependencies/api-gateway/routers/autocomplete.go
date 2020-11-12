@@ -23,6 +23,7 @@ func reverseProxy(c *gin.Context) {
 		// Golang camelcases headers
 		delete(req.Header, "My-Header")
 	}
+
 	proxy := &httputil.ReverseProxy{Director: director}
 	proxy.ServeHTTP(c.Writer, c.Request)
 }

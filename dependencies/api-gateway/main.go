@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/by12380/Autocomplete/configs"
-	"github.com/by12380/Autocomplete/routers"
+	"github.com/by12380/Autocomplete/dependencies/api-gateway/routers"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"github.com/weekface/mgorus"
@@ -27,11 +27,8 @@ func main() {
 	r.Use(configs.Logger(log), gin.Recovery())
 
 	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "success",
-		})
+		c.JSON(200, "success")
 	})
 	routers.InitAutocomplete(r.Group("/autocomplete"))
-
 	r.Run()
 }
